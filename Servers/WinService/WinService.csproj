@@ -10,12 +10,13 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
-		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="Scrutor" Version="5.0.2" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\Plugin.Abstractions\Plugin.Abstractions.csproj" />
+		<ProjectReference Include="..\..\Plugin.ModuleLoader\Plugin.ModuleLoader.csproj" />
 	</ItemGroup>
 
 </Project>
