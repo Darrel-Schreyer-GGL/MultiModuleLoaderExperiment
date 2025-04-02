@@ -15,7 +15,7 @@ public class ModuleLoader
 
     public void LoadModules()
     {
-        Console.WriteLine("Hello, World!");
+        Console.WriteLine("Loading Modules");
 
         var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
