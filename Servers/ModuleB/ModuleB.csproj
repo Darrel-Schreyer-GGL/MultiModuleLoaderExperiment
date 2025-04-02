@@ -6,8 +6,9 @@
 		<Nullable>enable</Nullable>
 		<LangVersion>12</LangVersion>
 		<UseWPF>true</UseWPF>
-		<OutputPath>..\Modules\ModuleB\</OutputPath>
+		<OutputPath>$(APPDATA)\Gallagher\Security\Modules\ModuleB</OutputPath>
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -16,6 +17,12 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\Plugin.Abstractions\Plugin.Abstractions.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="ModuleManifest.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 
 </Project>

@@ -1,9 +1,8 @@
-﻿namespace Plugin.Abstractions
-{
-    public interface IPlugin
-    {
-        string Name { get; }
+﻿namespace Plugin.Abstractions;
 
-        string Initialize();
-    }
+public interface IPlugin
+{
+    string Name { get; }
+
+    string Initialize();
 }
