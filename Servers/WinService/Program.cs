@@ -5,7 +5,7 @@ class Program
 {
     private static List<string> _menu = [];
 
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
         var moduleLoader = new ModuleLoader();
         moduleLoader.LoadModules();
@@ -20,6 +20,11 @@ class Program
             if (plugin is IPluginVisibility pluginVisibility)
             {
                 _menu.Add(pluginVisibility.Title);
+            }
+
+            if (plugin is IPluginBehavior pluginBehavior)
+            {
+                await pluginBehavior.ExecuteCommand.ExecuteAsync(null);
             }
         }
     }

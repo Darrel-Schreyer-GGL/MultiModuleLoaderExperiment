@@ -4,5 +4,5 @@ namespace Plugin.Abstractions;
 
 public interface IPluginBehavior
 {
-    public IRelayCommand Command { get; }
+    public IAsyncRelayCommand ExecuteCommand { get; }
 }

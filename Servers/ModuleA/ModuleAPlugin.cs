@@ -1,9 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using CommunityToolkit.Mvvm.Input;
+using Newtonsoft.Json;
 using Plugin.Abstractions;
 
 namespace ModuleA
 {
-    public class ModuleAPlugin : IPlugin, IPluginVisibility
+    public partial class ModuleAPlugin : IPlugin, IPluginVisibility
     {
         public string Name { get; } = "ModuleA";
 
@@ -18,5 +19,13 @@ namespace ModuleA
         public string Title { get; } = "Module A Title";
         public string? ImageSource { get; }
         public string? ToolTip { get; }
+
+        [RelayCommand]
+        public Task Execute()
+        {
+            Console.WriteLine("ModuleAPlugin executed.");
+
+            return Task.CompletedTask;
+        }
     }
 }
