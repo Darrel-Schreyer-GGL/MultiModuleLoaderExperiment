@@ -31,7 +31,7 @@ namespace ModuleA
 
         public void RegisterMessenger()
         {
-            WeakReferenceMessenger.Default.Register<string>(this, (r, m) =>
+            WeakReferenceMessenger.Default.Register<ModuleMessage>(this, (r, m) =>
             {
                 Console.WriteLine($"ModuleAPlugin received message: {m}");
             });

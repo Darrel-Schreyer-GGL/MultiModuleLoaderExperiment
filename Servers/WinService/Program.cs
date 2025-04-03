@@ -1,5 +1,4 @@
-﻿using CommunityToolkit.Mvvm.Messaging;
-using Plugin.Abstractions;
+﻿using Plugin.Abstractions;
 using Plugin.ModuleLoader;
 
 class Program
@@ -33,7 +32,5 @@ class Program
                 pluginReaction.RegisterMessenger();
             }
         }
-
-        WeakReferenceMessenger.Default.Send("Hello from the main program!");
     }
 }
