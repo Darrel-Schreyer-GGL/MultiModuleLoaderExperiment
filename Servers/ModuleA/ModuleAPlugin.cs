@@ -3,9 +3,9 @@ using Plugin.Abstractions;
 
 namespace ModuleA
 {
-    public class ModuleAPlugin : IPlugin
+    public class ModuleAPlugin : IPlugin, IPluginVisibility
     {
-        public string Name => "ModuleA";
+        public string Name { get; } = "ModuleA";
 
         public string Initialize()
         {
@@ -14,5 +14,9 @@ namespace ModuleA
             Console.WriteLine($"ModuleAPlugin loaded. Newtonsoft.Json version: {version}");
             return version.ToString();
         }
+
+        public string Title { get; } = "Module A Title";
+        public string? ImageSource { get; }
+        public string? ToolTip { get; }
     }
 }
