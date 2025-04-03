@@ -4,7 +4,7 @@ using Plugin.Abstractions;
 
 namespace ModuleA
 {
-    public partial class ModuleAPlugin : IPlugin, IPluginVisibility
+    public partial class ModuleAPlugin : IPlugin, IPluginVisibility, IPluginBehavior
     {
         public string Name { get; } = "ModuleA";
 
