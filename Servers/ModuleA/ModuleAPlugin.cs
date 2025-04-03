@@ -1,10 +1,11 @@
 ﻿using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 using Newtonsoft.Json;
 using Plugin.Abstractions;
 
 namespace ModuleA
 {
-    public partial class ModuleAPlugin : IPlugin, IPluginVisibility, IPluginBehavior
+    public partial class ModuleAPlugin : IPlugin, IPluginVisibility, IPluginBehavior, IPluginReaction
     {
         public string Name { get; } = "ModuleA";
 
@@ -26,6 +27,14 @@ namespace ModuleA
             Console.WriteLine("ModuleAPlugin executed.");
 
             return Task.CompletedTask;
+        }
+
+        public void RegisterMessenger()
+        {
+            WeakReferenceMessenger.Default.Register<string>(this, (r, m) =>
+            {
+                Console.WriteLine($"ModuleAPlugin received message: {m}");
+            });
         }
     }
 }

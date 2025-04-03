@@ -1,4 +1,5 @@
-﻿using Plugin.Abstractions;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using Plugin.Abstractions;
 using Plugin.ModuleLoader;
 
 class Program
@@ -26,6 +27,13 @@ class Program
             {
                 await pluginBehavior.ExecuteCommand.ExecuteAsync(null);
             }
+
+            if (plugin is IPluginReaction pluginReaction)
+            {
+                pluginReaction.RegisterMessenger();
+            }
         }
+
+        WeakReferenceMessenger.Default.Send("Hello from the main program!");
     }
 }
