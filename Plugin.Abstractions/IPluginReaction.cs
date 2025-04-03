@@ -3,4 +3,6 @@
 public interface IPluginReaction
 {
     void RegisterMessenger();
+
+    void CallMessenger();
 }

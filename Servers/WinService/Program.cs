@@ -30,6 +30,9 @@ class Program
             if (plugin is IPluginReaction pluginReaction)
             {
                 pluginReaction.RegisterMessenger();
+
+                Console.WriteLine($"Calling Messenger on Plugin {plugin.Name}");
+                pluginReaction.CallMessenger();
             }
         }
     }

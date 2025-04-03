@@ -33,8 +33,14 @@ namespace ModuleA
         {
             WeakReferenceMessenger.Default.Register<ModuleMessage>(this, (r, m) =>
             {
-                Console.WriteLine($"ModuleAPlugin received message: {m}");
+                Console.WriteLine($"ModuleAPlugin received message: {m.MessageString}");
             });
+        }
+
+        public void CallMessenger()
+        {
+            var message = new ModuleMessage("Hello from ModuleAPlugin!");
+            WeakReferenceMessenger.Default.Send(message);
         }
     }
 }
